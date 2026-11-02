@@ -1,0 +1,167 @@
+{
+  "product-detail-container": {
+    "component": "ProductDetailContainer",
+    "render": "client",
+    "props": {
+      "product": {
+        "type": "object",
+        "properties": {
+          "productId": { "type": "string" },
+          "productName": { "type": "string" },
+          "description": { "type": "string" },
+          "brand": { "type": "string" },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "itemId": { "type": "string" },
+                "name": { "type": "string" },
+                "images": {
+                  "type": "array",
+                  "items": { "type": "object" }
+                },
+                "sellers": {
+                  "type": "array",
+                  "items": { "type": "object" }
+                }
+              }
+            }
+          },
+          "specificationGroups": {
+            "type": "array",
+            "items": { "type": "object" }
+          }
+        },
+        "required": ["productId", "productName", "items"]
+      },
+      "loading": { "type": "boolean" },
+      "error": { "type": "string" }
+    },
+    "required": ["product"]
+  },
+  "product-gallery": {
+    "component": "ProductGallery",
+    "render": "client",
+    "props": {
+      "images": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "imageId": { "type": "string" },
+            "url": { "type": "string" },
+            "alt": { "type": "string" },
+            "label": { "type": "string" }
+          },
+          "required": ["url"]
+        }
+      },
+      "showThumbs": { "type": "boolean", "default": true },
+      "showDots": { "type": "boolean", "default": false },
+      "aspectRatio": { "type": "string", "default": "1:1" },
+      "maxHeight": { "type": "number", "default": 600 }
+    },
+    "required": ["images"]
+  },
+  "add-to-cart-button": {
+    "component": "AddToCartButton",
+    "render": "client",
+    "props": {
+      "skuId": { "type": "string" },
+      "quantity": { "type": "number", "default": 1 },
+      "available": { "type": "boolean", "default": true },
+      "price": { "type": "number" },
+      "label": { "type": "string", "default": "Agregar al carrito" },
+      "onSuccess": {
+        "type": "object",
+        "properties": {
+          "action": { "type": "string", "enum": ["go-to-cart", "show-modal", "none"] }
+        }
+      }
+    },
+    "required": ["skuId", "available"]
+  },
+  "product-summary": {
+    "component": "ProductSummary",
+    "render": "client",
+    "props": {
+      "product": { "type": "object" },
+      "showBadge": { "type": "boolean", "default": true },
+      "showInstallments": { "type": "boolean", "default": true },
+      "showSavings": { "type": "boolean", "default": true }
+    },
+    "required": ["product"]
+  },
+  "product-price": {
+    "component": "ProductPrice",
+    "render": "client",
+    "props": {
+      "product": { "type": "object" },
+      "showListPrice": { "type": "boolean", "default": true },
+      "showInstallments": { "type": "boolean", "default": true },
+      "showSavings": { "type": "boolean", "default": true },
+      "showLabels": { "type": "boolean", "default": true }
+    },
+    "required": ["product"]
+  },
+  "search-result": {
+    "component": "SearchResult",
+    "render": "client",
+    "props": {
+      "searchQuery": { "type": "string" },
+      "facets": { "type": "array", "items": { "type": "object" } },
+      "products": { "type": "array", "items": { "type": "object" } },
+      "pagination": {
+        "type": "object",
+        "properties": {
+          "page": { "type": "number" },
+          "perPage": { "type": "number" },
+          "total": { "type": "number" }
+        }
+      },
+      "sortOptions": { "type": "array", "items": { "type": "object" } },
+      "loading": { "type": "boolean" }
+    },
+    "required": ["searchQuery", "products"]
+  },
+  "shelf": {
+    "component": "Shelf",
+    "render": "client",
+    "props": {
+      "products": { "type": "array", "items": { "type": "object" } },
+      "title": { "type": "string" },
+      "columns": { "type": "number", "default": 4 },
+      "rows": { "type": "number", "default": 1 },
+      "gap": { "type": "string", "default": "8px" },
+      "navigationArrows": { "type": "string", "default": "always" },
+      "paginationDots": { "type": "string", "default": "never" }
+    },
+    "required": ["products"]
+  },
+  "hero-banner": {
+    "component": "HeroBanner",
+    "render": "client",
+    "props": {
+      "images": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "url": { "type": "string" },
+            "mobileUrl": { "type": "string" },
+            "alt": { "type": "string" },
+            "link": { "type": "string" },
+            "title": { "type": "string" },
+            "subtitle": { "type": "string" },
+            "callToAction": { "type": "string" }
+          },
+          "required": ["url"]
+        }
+      },
+      "autoplay": { "type": "boolean", "default": true },
+      "autoplaySpeed": { "type": "number", "default": 5000 }
+    },
+    "required": ["images"]
+  }
+}

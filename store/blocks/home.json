@@ -1,0 +1,122 @@
+{
+  "store.home": {
+    "blocks": [
+      "hero-banner#home",
+      "shelf#featured-products",
+      "shelf#new-arrivals",
+      "shelf#best-sellers",
+      "info-card#promo",
+      "rich-text#home-message"
+    ]
+  },
+  "hero-banner#home": {
+    "props": {
+      "images": [
+        {
+          "url": "https://storecomponents.vteximg.com.br/assets/vtex.file-manager-graphql/images/banner-principal-desktop.png",
+          "mobileUrl": "https://storecomponents.vteximg.com.br/assets/vtex.file-manager-graphql/images/banner-principal-mobile.png",
+          "alt": "Promoción principal",
+          "link": "/promociones",
+          "title": "Nueva Colección",
+          "subtitle": "Descubre las últimas tendencias",
+          "callToAction": "Ver más"
+        },
+        {
+          "url": "https://storecomponents.vteximg.com.br/assets/vtex.file-manager-graphql/images/banner-secundario-desktop.png",
+          "mobileUrl": "https://storecomponents.vteximg.com.br/assets/vtex.file-manager-graphql/images/banner-secundario-mobile.png",
+          "alt": "Segunda promoción",
+          "link": "/nuevos",
+          "title": "Envío Gratis",
+          "subtitle": "En pedidos mayores a $99",
+          "callToAction": "Comprar ahora"
+        }
+      ],
+      "autoplay": true,
+      "autoplaySpeed": 6000
+    }
+  },
+  "shelf#featured-products": {
+    "props": {
+      "title": "Productos Destacados",
+      "columns": 4,
+      "rows": 2,
+      "gap": "16px",
+      "navigationArrows": "always",
+      "paginationDots": "never"
+    }
+  },
+  "shelf#new-arrivals": {
+    "props": {
+      "title": "Últimos Lanzamientos",
+      "columns": 4,
+      "rows": 1,
+      "gap": "12px",
+      "navigationArrows": "always",
+      "paginationDots": "never"
+    }
+  },
+  "shelf#best-sellers": {
+    "props": {
+      "title": "Más Vendidos",
+      "columns": 4,
+      "rows": 1,
+      "gap": "12px",
+      "navigationArrows": "mobileOnly",
+      "paginationDots": "always"
+    }
+  },
+  "info-card#promo": {
+    "props": {
+      "id": "promo-info",
+      "isFullMode": false,
+      "textPosition": "left",
+      "imageUrl": "https://storecomponents.vteximg.com.br/assets/vtex.file-manager-graphql/images/info-card-image.png",
+      "headline": "ENVÍO EXPRESS",
+      "subhead": "Recibe tu pedido en menos de 24 horas",
+      "callToActionText": "Ver condiciones",
+      "callToActionLink": "/envios",
+      "textAlignment": "left"
+    }
+  },
+  "rich-text#home-message": {
+    "props": {
+      "text": "## Bienvenido a nuestra tienda\n\nEncuentra los mejores productos con la mejor calidad",
+      "textPosition": "CENTER",
+      "font": "t-heading-1"
+    }
+  },
+  "search-result-page.home": {
+    "blocks": ["search-result#home"]
+  },
+  "search-result#home": {
+    "blocks": ["gallery#search", "filter-navigator.v3#search"],
+    "props": {
+      "recordsPerPage": 12,
+      "maxItemsPerPage": 20,
+      "summary": {
+        "showBadge": true,
+        "showInstallments": true,
+        "showSavings": true
+      }
+    }
+  },
+  "gallery#search": {
+    "props": {
+      "layout": "responsive",
+      "itemsPerRow": {
+        "desktop": 4,
+        "tablet": 3,
+        "phone": 2
+      }
+    }
+  },
+  "filter-navigator.v3#search": {
+    "props": {
+      "categoryFilters": "all",
+      "priceRangeFilters": "all",
+      "specificationFilters": "all",
+      "showQuantity": true,
+      "updateOnScroll": true
+    }
+  }
+}

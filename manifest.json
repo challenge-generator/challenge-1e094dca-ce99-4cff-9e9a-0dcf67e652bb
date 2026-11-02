@@ -1,0 +1,48 @@
+{
+  "vendor": "vtex",
+  "name": "store-clean-code-refactor",
+  "version": "1.0.0",
+  "builders": {
+    "react": "3.x",
+    "store": "4.x",
+    "styles": "2.x"
+  },
+  "dependencies": {
+    "vtex.store": "2.x",
+    "vtex.store-framework": "0.x",
+    "vtex.styleguide": "9.x",
+    "vtex.product-summary": "2.x",
+    "vtex.product-details": "2.x",
+    "vtex.product-specifications": "1.x",
+    "vtex.search-result": "3.x",
+    "vtex.shelf": "1.x",
+    "vtex.store-components": "3.x",
+    "vtex.store-icons": "0.x"
+  },
+  "peerDependencies": {
+    "react": "18.x",
+    "react-dom": "18.x"
+  },
+  "settings": {
+    "title": "Store Clean Code Refactor",
+    "description": "Refactored store applying clean code principles",
+    "url": {
+      "home": "/",
+      "products": "/:slug/p"
+    },
+    "hidden": false
+  },
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "allowedHosts": [
+          "*.vtex.com",
+          "*.vtexpay.com.br",
+          "*.vtexapi.com",
+          "*.vtexassets.com"
+        ]
+      }
+    }
+  ]
+}
